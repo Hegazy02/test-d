@@ -52,7 +52,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `"https://www.darbproductions.com"+${locale=="ar"?"/ar":""}/about`,
+      url: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/about`,
       siteName: "Darb Productions",
       images: [
         {

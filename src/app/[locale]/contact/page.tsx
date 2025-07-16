@@ -52,7 +52,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `"https://www.darbproductions.com"+${locale=="ar"?"/ar":""}/contact-us`,
+      url: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/contact-us`,
       siteName: "Darb Productions",
       images: [
         {
@@ -72,7 +72,7 @@ export async function generateMetadata({
       images: ["https://www.darbproductions.com/images/contact/twitter-image.jpg"],
     },
     alternates: {
-      canonical: `"https://www.darbproductions.com"+${locale=="ar"?"/ar":""}/contact-us`,
+      canonical: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/contact-us`,
       languages: {
         en: "https://www.darbproductions.com/contact-us",
         ar: "https://www.darbproductions.com/ar/contact-us",

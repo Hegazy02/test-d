@@ -53,7 +53,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `"https://www.darbproductions.com"+${locale=="ar"?"/ar":""}/darbprint`,
+      url: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/darbprint`,
       siteName: "Darb Productions",
       images: [
         {
@@ -77,7 +77,7 @@ export async function generateMetadata({
       ],
     },
     alternates: {
-      canonical: `"https://www.darbproductions.com"+${locale=="ar"?"/ar":""}/darbprint`,
+      canonical: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/darbprint`,
       languages: {
         en: "https://www.darbproductions.com/darbprint",
         ar: "https://www.darbproductions.com/ar/darbprint",

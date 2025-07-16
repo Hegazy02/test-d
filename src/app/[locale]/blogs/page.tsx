@@ -55,7 +55,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `"https://www.darbproductions.com"+${locale=="ar"?"/ar":""}/blog`,
+      url: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/blog`,
       siteName: "Darb Productions",
       images: [
         {
@@ -75,7 +75,7 @@ export async function generateMetadata({
       images: ["https://www.darbproductions.com/images/blog/twitter-image.jpg"],
     },
     alternates: {
-      canonical: `"https://www.darbproductions.com"+${locale=="ar"?"/ar":""}/blog`,
+      canonical: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/blog`,
       languages: {
         en: "https://www.darbproductions.com/blog",
         ar: "https://www.darbproductions.com/ar/blog",
