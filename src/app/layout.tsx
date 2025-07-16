@@ -51,7 +51,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: "website",
       locale: locale === "ar" ? "ar_SA" : "en_US",
-      url: `https://www.darbproductions.com+${locale == "ar" ? "/ar" : ""} `,
+      url: `https://www.darbproductions.com == "ar" ? "/ar" : ""} `,
       title: isArabic
         ? "Darb Productions - إنتاج الوسائط وإدارة الفعاليات"
         : "Darb Productions - Media Production & Event Management",

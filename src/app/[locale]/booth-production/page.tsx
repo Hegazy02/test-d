@@ -63,7 +63,7 @@ export async function generateMetadata({
       ],
     },
     alternates: {
-      canonical: `https://www.darbproductions.com+${locale == "ar" ? "/ar" : ""}/booth-production`,
+      canonical: `https://www.darbproductions.com${locale=="ar"?"/ar":""}/booth-production`,
       languages: {
         en: "https://www.darbproductions.com/booth-production",
         ar: "https://www.darbproductions.com/ar/booth-production",

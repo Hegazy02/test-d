@@ -54,7 +54,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/events-management`,
+      url: `https://www.darbproductions.com${locale=="ar"?"/ar":""}/events-management`,
       siteName: "Darb Productions",
       images: [
         {
@@ -76,7 +76,7 @@ export async function generateMetadata({
       images: ["https://www.darbproductions.com/images/events/twitter-image.jpg"],
     },
     alternates: {
-      canonical: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/events-management`,
+      canonical: `https://www.darbproductions.com${locale=="ar"?"/ar":""}/events-management`,
       languages: {
         en: "https://www.darbproductions.com/events-management",
         ar: "https://www.darbproductions.com/ar/events-management",

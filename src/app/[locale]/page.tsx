@@ -63,7 +63,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://www.darbproductions.com+${locale=="ar"?"/ar":""} `,
+      url: `https://www.darbproductions.com${locale=="ar"?"/ar":""} `,
       siteName: "Darb Productions",
       images: [
         {

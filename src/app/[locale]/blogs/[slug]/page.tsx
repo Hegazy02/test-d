@@ -120,7 +120,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/blogs/${slug}`,
+      url: `https://www.darbproductions.com${locale=="ar"?"/ar":""}/blogs/${slug}`,
       siteName: "Darb Productions",
       images: [
         {
@@ -145,7 +145,7 @@ export async function generateMetadata({
       images: [twitterImage],
     },
     alternates: {
-      canonical: `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/blogs/${slug}`,
+      canonical: `https://www.darbproductions.com${locale=="ar"?"/ar":""}/blogs/${slug}`,
       languages: {
         en: `https://www.darbproductions.com/blogs/${slug}`,
         ar: `https://www.darbproductions.com/ar/blogs/${slug}`,
@@ -175,7 +175,7 @@ export async function generateMetadata({
             dateModified: post.publishedAt,
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": `https://www.darbproductions.com+${locale=="ar"?"/ar":""}/blogs/${slug}`,
+              "@id": `https://www.darbproductions.com${locale=="ar"?"/ar":""}/blogs/${slug}`,
             },
           }),
         }
