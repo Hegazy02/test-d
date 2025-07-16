@@ -1,0 +1,799 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+/* Import Inter font for English */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* تعريف خطوط DIN Next LT Arabic */
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("/fonts/DIN Next LT Arabic-Ultra Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("/fonts/DIN Next LT Arabic-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("/fonts/DIN Next LT Arabic-Reguler.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("/fonts/DIN Next LT Arabic-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("/fonts/DIN Next LT Arabic-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("/fonts/DIN Next LT Arabic-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter for Latin only */
+@font-face {
+  font-family: "InterLatin";
+  src: url("/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+1E00-1EFF; /* Latin + Extended */
+}
+
+/* Cairo for Arabic only */
+@font-face {
+  font-family: "CairoArabic";
+  src: url("/fonts/DIN Next LT Arabic-Reguler.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF; /* Arabic */
+}
+
+@theme {
+  /* تعريف الحركات */
+  --animate-first: moveVertical 10s ease infinite;
+  --animate-second: moveInCircle 10s reverse infinite;
+  --animate-third: moveInCircle 10s linear infinite;
+  --animate-fourth: moveHorizontal 10s ease infinite;
+  --animate-fifth: moveInCircle 10s ease infinite;
+
+  /* تعريف keyframes */
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+}
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 9% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 10% 3.9%;
+  --radius: 0.5rem;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+}
+
+.dark {
+  --background: 0 0% 0%; /* أسود تمامًا */
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Cairo", sans-serif;
+  --font-mono: "Cairo", monospace;
+}
+
+/* Default font for all elements (Arabic as fallback) */
+* {
+  font-family: "Cairo", sans-serif;
+}
+
+/* Use Inter for English (Latin) text */
+:lang(en),
+.font-en,
+.direction-ltr,
+[dir="ltr"] {
+  font-family: "Inter", "Cairo", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.direction-rtl {
+  direction: rtl;
+}
+.direction-ltr {
+  direction: ltr;
+}
+
+/* Arabic font weights */
+.font-arabic-ultralight {
+  font-family: "DIN Next LT Arabic", "Cairo", sans-serif;
+  font-weight: 200;
+}
+
+.font-arabic-light {
+  font-family: "DIN Next LT Arabic", "Cairo", sans-serif;
+  font-weight: 300;
+}
+
+.font-arabic-regular {
+  font-family: "DIN Next LT Arabic", "Cairo", sans-serif !important;
+  font-weight: 400;
+}
+
+.font-arabic-medium {
+  font-family: "DIN Next LT Arabic", "Cairo", sans-serif;
+  font-weight: 500;
+}
+
+.font-arabic-bold {
+  font-family: "DIN Next LT Arabic", "Cairo", sans-serif;
+  font-weight: 700;
+}
+
+.font-arabic-black {
+  font-family: "DIN Next LT Arabic", "Cairo", sans-serif;
+  font-weight: 900;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Cairo", sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.rounded-all {
+  border-radius: 20px;
+}
+.rounded-med {
+  border-radius: 10px;
+}
+.image-render-policy {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.cursor-custom {
+  cursor:
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 60 60"%3E%3Ccircle cx="20" cy="20" r="18" fill="white"/%3E%3Cline x1="14" y1="14" x2="26" y2="26" stroke="black" stroke-width="2" /%3E%3Cline x1="14" y1="26" x2="26" y2="14" stroke="black" stroke-width="2" /%3E%3C/svg%3E')
+      20 20,
+    auto;
+}
+.shadow-custom {
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.direction-ltr {
+  direction: ltr;
+}
+body {
+  overflow-y: auto;
+}
+.product-card {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border-color: transparent;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  width: calc(33.333% - 20px);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+.custom-confirm,
+.custom-cancel {
+  background-color: #007bff !important;
+  color: #fff !important;
+  border: none;
+}
+.note-box {
+  overflow: hidden;
+  max-height: 100%;
+  padding: 1rem;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.containerr {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.phone-input-container {
+  height: 42px;
+  font-size: 14px;
+}
+.phone-input-container input {
+  height: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+  .containerr {
+    max-width: 1400px;
+  }
+}
+.main-content {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
+}
+.table-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.table-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #804af3;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+}
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #564af3;
+}
+.table-container::-webkit-scrollbar-button {
+  background-color: transparent;
+}
+.table-container::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 1000px;
+  padding-bottom: 5rem;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.prose span {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  background-color: transparent !important;
+  text-align: initial !important;
+}
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+.responsive-text {
+  font-size: 1.25rem;
+}
+@media (min-width: 640px) {
+  .responsive-text {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .responsive-text {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 1280px) {
+  .responsive-text {
+    font-size: 2.25rem;
+  }
+}
+.subtitle {
+  font-size: 0.875rem;
+}
+@media (min-width: 640px) {
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+.responsive-title {
+  font-size: 1.25rem;
+}
+@media (min-width: 640px) {
+  .responsive-title {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .responsive-title {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 1280px) {
+  .responsive-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Ensure proper display for RTL */
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+/* Fix common RTL issues */
+[dir="rtl"] * {
+  /* Prevent elements from disappearing in RTL */
+  unicode-bidi: embed;
+}
+
+/* Specific fixes for flex containers */
+[dir="rtl"] .flex {
+  direction: rtl;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Grid fixes for RTL */
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* Position fixes */
+[dir="rtl"] .absolute {
+  right: auto;
+  left: inherit;
+}
+
+[dir="rtl"] .relative {
+  right: auto;
+  left: inherit;
+}
+
+/* Margin and padding adjustments */
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Transform fixes for RTL */
+[dir="rtl"] .transform {
+  transform-origin: right center;
+}
+
+/* Ensure visibility */
+[dir="rtl"] > * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.force-ltr {
+  direction: ltr !important;
+}
+
+.force-ltr * {
+  direction: ltr !important;
+}
+/* Force LTR for results section */
+.results-section-isolated {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+.results-section-isolated * {
+  direction: ltr !important;
+}
+
+/* Override RTL inheritance */
+[dir="rtl"] .results-section-isolated,
+[dir="rtl"] .results-section-isolated * {
+  direction: ltr !important;
+}
+
+/* Fix absolute positioning */
+.results-section-isolated .absolute {
+  inset: unset !important;
+}
+
+/* Updated utility classes to use CSS variables */
+.bg-card {
+  background-color: hsl(var(--card));
+}
+
+.text-primary {
+  color: hsl(var(--foreground));
+}
+
+.text-secondary {
+  color: hsl(var(--muted-foreground));
+}
+
+.theme-transition {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* CSS class تضيف انتقال تدريجي لكل العناصر */
+.fade-container * {
+  transition:
+    opacity 0.8s ease-in-out,
+    visibility 0.8s ease-in-out;
+}
+
+.force-opacity-0 * {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Shimmer Border Animations */
+@keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+  }
+  15%,
+  35% {
+    transform: translateZ(0) rotate(90deg);
+  }
+  65%,
+  85% {
+    transform: translateZ(0) rotate(270deg);
+  }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+
+@keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+  }
+}
+
+/* Shimmer Border Button Classes */
+.shimmer-border-button {
+  --spread: 90deg;
+  --shimmer-color: #fff;
+  --radius: 100px;
+  --speed: 3s;
+  --cut: 0.05em;
+
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  /* إزالة الخلفية الافتراضية */
+  background: transparent;
+}
+
+.shimmer-border-button:active {
+  transform: translateY(1px);
+}
+
+/* إنشاء مساحة 1px على الأطراف */
+.shimmer-border-button::before {
+  content: "";
+  position: absolute;
+  inset: 1px; /* مساحة 1px من جميع الأطراف */
+  border-radius: calc(var(--radius) - 1px);
+  background: inherit; /* يرث لون الخلفية من الزر */
+  z-index: -1;
+}
+
+.shimmer-border-button .spark-container {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  container-type: size;
+}
+
+.shimmer-border-button .spark {
+  position: absolute;
+  inset: 0;
+  height: 100cqh;
+  aspect-ratio: 1;
+  border-radius: 0;
+  mask: none;
+  animation: shimmer-slide var(--speed) ease-in-out infinite alternate;
+}
+
+.shimmer-border-button .spark::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  width: auto;
+  rotate: 0;
+  background: conic-gradient(
+    from calc(270deg - (var(--spread) * 0.5)),
+    transparent 0,
+    var(--shimmer-color) var(--spread),
+    transparent var(--spread)
+  );
+  translate: 0 0;
+  animation: spin-around calc(var(--speed) * 2) infinite linear;
+}
+
+/* Customizable variants */
+.shimmer-border-button.primary {
+  --shimmer-color: #3b82f6;
+}
+
+.shimmer-border-button.success {
+  --shimmer-color: #10b981;
+}
+
+.shimmer-border-button.warning {
+  --shimmer-color: #f59e0b;
+}
+
+.shimmer-border-button.danger {
+  --shimmer-color: #ef4444;
+}
+
+.shimmer-border-button.slow {
+  --speed: 5s;
+}
+
+.shimmer-border-button.fast {
+  --speed: 1.5s;
+}
+
+.shimmer-border-button.rounded-sm {
+  --radius: 0.375rem;
+}
+
+.shimmer-border-button.rounded-md {
+  --radius: 0.5rem;
+}
+
+.shimmer-border-button.rounded-lg {
+  --radius: 0.75rem;
+}
+
+.shimmer-border-button.rounded-xl {
+  --radius: 1rem;
+}
+
+.shimmer-border-button.rounded-full {
+  --radius: 9999px;
+}
+
+/* Background Gradient Animation Keyframes */
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-30px) translateY(-20px);
+  }
+  25% {
+    transform: translateX(30px) translateY(20px);
+  }
+  50% {
+    transform: translateX(20px) translateY(-30px);
+  }
+  75% {
+    transform: translateX(-20px) translateY(30px);
+  }
+  100% {
+    transform: translateX(-30px) translateY(-20px);
+  }
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg) translateX(20px) rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg) translateX(20px) rotate(-90deg);
+  }
+  50% {
+    transform: rotate(180deg) translateX(20px) rotate(-180deg);
+  }
+  75% {
+    transform: rotate(270deg) translateX(20px) rotate(-270deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(20px) rotate(-360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-20px);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Background Gradient Animation Classes */
+.animate-first {
+  animation: moveVertical 15s ease infinite;
+}
+
+.animate-second {
+  animation: moveInCircle 10s reverse infinite;
+}
+
+.animate-third {
+  animation: moveInCircle 20s linear infinite;
+}
+
+.animate-fourth {
+  animation: moveHorizontal 20s ease infinite;
+}
+
+.animate-fifth {
+  animation: moveInCircle 10s ease infinite;
+}
+
+/* Subheading Style */
+.subheading,
+.h2-description-text {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .subheading,
+  .h2-description-text {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+  }
+}
+
+/* Heading Style */
+.heading,
+.h2CSS {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .heading,
+  .h2CSS {
+    font-size: 1.5rem; /* 20px */
+    line-height: 2rem; /* 28px */
+  }
+}

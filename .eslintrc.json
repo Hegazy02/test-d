@@ -1,0 +1,14 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:jsx-a11y/recommended"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    "no-console": "warn", // يعرض تحذيرات عند استخدام console
+    "no-unused-vars": "warn", // يعرض تحذيرات عند وجود متغيرات غير مستخدمة
+    "react/react-in-jsx-scope": "off" // يعرض تحذيرات لـ React
+  },
+  "plugins": ["jsx-a11y"],
+
+  "ignorePatterns": ["pages/api/auth/[...nextauth].js"]
+}

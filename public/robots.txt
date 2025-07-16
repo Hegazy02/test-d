@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.darbproductions.com
+
+# Sitemaps
+Sitemap: https://www.darbproductions.com/sitemap.xml
